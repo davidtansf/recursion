@@ -13,5 +13,9 @@ var stringifyJSON = function(obj) {
 		return obj.toString();
 	}
 	if (obj.constructor === String) {
-		return obj.toString();
+		return "\"" + obj + "\"";
+	}
+	if (obj.constructor === Array) {
+		return "\'" + obj + "\'";
+	}		
 };
