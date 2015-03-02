@@ -4,14 +4,26 @@
 // };
 
 // But instead we're going to implement it from scratch:
-var getElementsByClassName = function(className) {
-  var newArray = [];
-  var dom = document.body;
-  for (var i = 0; i < dom.length; i++)  
-  // iterate through document.body
-  // at each element, use recursion to search through nested elements? 
-};
 
+var getElementsByClassName = function(className) {
+  var results = [];
+
+  var findClass = function(node) {
+  //	console.log(node);
+  	var arr = node.className.split(' ');
+ // 	console.log(arr);
+    if (arr.indexOf(className) >= 0) {
+  	  results.push(node);
+    }
+    for (var i = 0; i < node.children.length; i++) {
+    	findClass(node.children[i]);
+    }
+  }
+
+  findClass(document.body);
+ // console.log(results);
+  return results;  
+};
 
 // document.body - http://www.w3schools.com/jsref/prop_doc_body.asp
 // element.childNodes – http://www.w3schools.com/jsref/prop_node_childnodes.asp
