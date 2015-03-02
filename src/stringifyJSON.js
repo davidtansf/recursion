@@ -9,9 +9,6 @@ var stringifyJSON = function(obj) {
 	if (obj === null) {
 		return 'null';
 	}
-	if (obj === undefined) {
-		return '{}';
-	}
 	if (obj.constructor === Number || obj.constructor === Boolean) {
 		return obj.toString();
 	}

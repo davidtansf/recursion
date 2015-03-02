@@ -6,5 +6,10 @@
 // But instead we're going to implement it from scratch:
 var getElementsByClassName = function(className
 ){
-  // your code here
+   // your code here
 };
+
+
+// document.body - http://www.w3schools.com/jsref/prop_doc_body.asp
+// element.childNodes – http://www.w3schools.com/jsref/prop_node_childnodes.asp
+// element.classList - http://www.w3schools.com/jsref/prop_element_classlist.asp
