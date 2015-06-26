@@ -53,16 +53,16 @@ var stringifyJSON = function(input) {
     for (var i = 0; i < input.length; i++) {
       result.push(stringifyJSON(input[i]));
     }
-    return "[" + result + "]";
+    return "[" + result + "]"; // can also be return "[" + result.join(",") + "]";
   }
   if (typeof input === 'object') {
     var result = [];
     for (var key in input) {
       if (input[key] !== undefined && typeof input[key] !== 'function') {
-          result.push(('"' + key + '"') + ":" + stringifyJSON(input[key]));
+          result.push(stringifyJSON(key) + ":" + stringifyJSON(input[key])); // return result.push(('"' + key + '"') + ":" + stringifyJSON(input[key]));
       }
     }
-    return "{" + result + "}";
+    return "{" + result + "}"; // can also be return "{" + result.join(",") + "}";
   }
 };
 
