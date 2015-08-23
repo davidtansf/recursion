@@ -9,20 +9,21 @@ var getElementsByClassName = function(className) {
   var results = [];
 
   var findClass = function(node) {
-  //	console.log(node);
-  	var arr = node.className.split(' ');
- // 	console.log(arr);
+    var arr = node.className.split(' ');
+
     if (arr.indexOf(className) >= 0) {
-  	  results.push(node);
+      results.push(node);
     }
+
     for (var i = 0; i < node.children.length; i++) {
-    	findClass(node.children[i]);
+      findClass(node.children[i]);
     }
-  }
+  };
 
   findClass(document.body);
- // console.log(results);
-  return results;  
+
+  return results;
+
 };
 
 // document.body - http://www.w3schools.com/jsref/prop_doc_body.asp
